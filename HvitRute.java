@@ -14,11 +14,11 @@ public class HvitRute extends Rute{
 
   public void gaa(String vei, Rute komFra) {
 
-    //if (besokt) return; // For å løse sykliske labyrinter (valgfri del)
+    //if (besokt) return; // For å løse sykliske labyrinter 
 
 
 
-    //besokt = true; // For å løse sykliske labyrinter (valgfri del)
+    //besokt = true; // For å løse sykliske labyrinter 
 
     vei += toString() + " --> ";
 
@@ -34,7 +34,7 @@ public class HvitRute extends Rute{
 
 
 
-    //besokt = false; // For å løse sykliske labyrinter (valgfri del)
+    //besokt = false; // For å løse sykliske labyrinter 
 
   }
 
@@ -50,31 +50,4 @@ public class HvitRute extends Rute{
 
 }
 
-/* class HvitRute extends Rute{
 
-  public HvitRute(int rad, int kolonne){
-    super(rad, kolonne);
-  }
-
-  @Override
-  public char tilTegn(){
-    return '.';
-  }
-  @Override
-  public void gaa(Rute forrige,String utvei) {
-
-    for (Rute r:hentNaboer()) {
-      if (r!=null
-          && !r.equals(forrige)
-          && r.ytterrute(forrige)==false) {
-        utvei+="("+this.kolonne+"/"+this.rad+")";
-        utvei+="-->";
-        r.gaa(this,utvei);
-      }
-    }
-    if (ytterrute(this)) {
-      //utvei+="("+this.kolonne+"/"+this.rad+")";
-      this.l.utveier.leggTil(utvei);
-    }
-  }
-}*/
