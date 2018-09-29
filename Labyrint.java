@@ -104,15 +104,7 @@ public class Labyrint {
 		ruter[rad][kol].finnUtvei();
 
 
-		// Collections.sort() er for sortering av utveier etter lengde slik at vi kan finne
-
-		// korteste utvei (valgfri del). Se opptaket av plenum (siste par minutter) for
-
-		// forklaring. Collections.sort fungerer ikke med Liste fra oblig 3, da må dette
-
-		// implementeres med en "wrapper-klasse" som implementerer Comparable i stedet.
-
-		// Om det er uklart, er det bare å spørre på Piazza!
+	
 
 		Collections.sort(utveier, (a, b) -> {
 
@@ -153,85 +145,3 @@ public class Labyrint {
 	}
 
 }
-/*public class Labyrint {
-	static int antallRader;
-	static int antallKolonner;
-	static Rute[][] rutenett;
-	static public Lenkeliste <String> utveier;
-
-
-	private Labyrint(Rute[][] rute, int r, int k) {
-		antallRader=r;
-		antallKolonner=k;
-		rutenett=rute;
-		utveier=new Lenkeliste<String>();
-		for (int rr=0; rr<r; rr++) {
-			for (int kk=0;kk<k;kk++) {
-				rutenett[rr][kk].setLabyrint(this);
-				Rute rute1=rutenett[rr][kk];
-				if (rr>0) rute1.settNord(rutenett[rr-1][kk]);
-				if (rr<antallRader-1) rute1.settSoer(rutenett[rr+1][kk]);
-				if (kk>0) rute1.settVest(rutenett[rr][kk-1]);
-				if(kk<antallKolonner-1) rute1.settOest(rutenett[rr][kk+1]);
-			}
-		}
-	}
-
-	public static Labyrint leseFraFil(File fil)throws FileNotFoundException {
-
-			Scanner sc=new Scanner(fil);
-			String line=sc.nextLine();
-			String[] dimensjoner = line.split(" ");
-
-			antallKolonner=Integer.parseInt(dimensjoner[1]);
-			antallRader=Integer.parseInt(dimensjoner[0]);
-
-
-			Rute[][] rutenett=new Rute[antallRader][antallKolonner];
-			int r=0;
-			while(sc.hasNextLine()) {
-				line=sc.nextLine();
-				if (line.length()>0) {
-					for (int i=0;i<antallKolonner;i++) {
-						char c=line.charAt(i);
-						if (c=='#') {
-							rutenett[r][i]=new SortRute(r,i);
-						}
-						else if (c=='.') {
-							if(r==0 || r==antallRader-1 || i==0 ||i==antallKolonner-1) {
-								rutenett[r][i]=new Aapning(r,i);
-							}
-							else {
-								rutenett[r][i]=new HvitRute(r,i);
-							}
-						}
-					}
-					r++;
-				}
-			}
-			Labyrint l=new Labyrint(rutenett,antallRader,antallKolonner);
-
-			return l;
-		}
-
-
-	public String toString() {
-		String out=new String();
-		for (int i=0; i<this.antallRader;i++) {
-			for (int j=0; j<this.antallKolonner;j++) {
-				out=out+rutenett[i][j].tilTegn();
-			}
-			out=out+"\n";
-		}
-		return out;
-	}
-
-
-	public Lenkeliste finnUtveiFra(int rad, int kol) {
-		utveier = new Lenkeliste<String>();
-		rutenett [rad][kol].gaa(rutenett[rad][kol],""); //this
-
-		return utveier;
-	}
-
-}*/
