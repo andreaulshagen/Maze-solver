@@ -136,35 +136,7 @@ public void sett(int index, T t){
   }
 }
 
-/*@Override
-public void sett(int index, T t){
 
-  Node n = head.next;
-  Node ny = new Node(t);
-
-  if(head == null){
-   throw new UgyldigListeIndeks(-1);
-  }
-
-  else if(index == 0){
-    ny.prev = n.prev;
-    ny.next = n;
-    n.prev.next = ny;
-    n.prev = ny;
-  }
-
-  else if(index > 0 && index < stoerrelse()){
-    for (int i = 0; i < index; i++) {
-        n = n.next;
-      }
-      ny.prev = n.prev;
-      ny.next = n.next;
-      n.prev.next = ny;
-      n.next.prev = ny;
-    }else{
-      throw new UgyldigListeIndeks(index);
-    }
-  }*/
 
 @Override
 public T fjern(int index){
