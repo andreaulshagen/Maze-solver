@@ -14,7 +14,7 @@ public class SortRute extends Rute {
   public void gaa(String vei, Rute komFra) {
 
 
-    return; // Her skal vi ikke gjøre noe
+    return; 
 
   }
 
@@ -29,17 +29,4 @@ public class SortRute extends Rute {
   }
 
 }
-/*class SortRute extends Rute{
 
-  public SortRute(int rad, int kolonne){
-    super(rad, kolonne);
-  }
-  @Override
-  public char tilTegn(){
-    return '#';
-  }
-  @Override
-  public void gaa(Rute forrige,String utvei){
-    return;
-  }
-}*/
